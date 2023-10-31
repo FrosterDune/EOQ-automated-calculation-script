@@ -1,7 +1,7 @@
 import pandas as pd
 from math import sqrt
 
-df = pd.read_csv("quantity_template.csv", encoding="UTF-8", delimiter=";")
+df = pd.read_csv("quantity_template.csv", encoding="UTF-8", delimiter=",")
 
 class Qopt:
 
@@ -23,7 +23,7 @@ class Qopt:
         while invalid_input:
             user_input = input("Do you want to save this result as a CSV file (Y/N)? \n")
             if user_input == "Y" or user_input == "y":
-                df.round(1).to_csv("quantity_results.csv", encoding="UTF-8", sep=";")
+                df.round(1).to_csv("quantity_results.csv", encoding="UTF-8", sep=",")
                 print("A new file with the name 'quantity_results.csv' has been successfully created")
                 invalid_input = False
             elif user_input == "N" or user_input == "n":
